@@ -2,7 +2,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY . .
 
-# Build the app
+# ✅ Make mvnw executable (IMPORTANT)
+RUN chmod +x mvnw
+
+# Build the project
 RUN ./mvnw clean package -DskipTests
 
 # Run the app
