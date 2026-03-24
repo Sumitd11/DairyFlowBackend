@@ -1,8 +1,9 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
+
 WORKDIR /app
 COPY . .
 
-# ✅ Make mvnw executable (IMPORTANT)
+# Make mvnw executable
 RUN chmod +x mvnw
 
 # Build the project
